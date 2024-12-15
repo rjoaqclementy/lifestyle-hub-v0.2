@@ -1,0 +1,119 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-gray-950 text-white;
+  }
+
+  /* Z-index layers */
+  :root {
+    --z-base: 0;
+    --z-header: 40;
+    --z-sidebar: 50;
+    --z-modal: 60;
+    --z-overlay: 70;
+    --z-dialog: 80;
+    --z-tooltip: 90;
+    --z-toast: 100;
+  }
+}
+
+
+@layer components {
+  .btn-primary {
+    @apply px-6 py-3 bg-[#573cff] hover:bg-[#573cff]/80 text-white rounded-lg 
+    transition-all duration-200 font-semibold shadow-lg hover:shadow-[#573cff]/50;
+  }
+  
+  .card {
+    @apply p-6 rounded-xl bg-gray-800/50 backdrop-blur-sm border border-gray-700
+    hover:border-[#573cff]/50 transition-all duration-300
+    hover:shadow-lg hover:shadow-[#573cff]/20;
+  }
+
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  
+  /* Hide scrollbar for IE, Edge and Firefox */
+  .scrollbar-hide {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  
+  /* Hide scrollbar for IE, Edge and Firefox */
+  .scrollbar-hide {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+
+  .auth-container {
+    @apply w-full space-y-4;
+  }
+
+  .auth-button {
+    @apply w-full py-3 px-4 mb-2 flex items-center justify-center gap-2 
+    bg-[#573cff] hover:bg-[#573cff]/80 text-white rounded-lg 
+    transition-all duration-200 font-semibold;
+  }
+
+  .auth-input-wrapper {
+    @apply relative flex-1;
+  }
+
+  .auth-input {
+    @apply w-full bg-gray-800/50 border rounded-lg pl-10 pr-4 py-3
+    text-white placeholder-gray-400 transition-colors duration-200
+    focus:outline-none focus:ring-2 focus:ring-[#573cff]/50;
+  }
+
+  .auth-input.error {
+    @apply border-red-500 focus:ring-red-500/50;
+  }
+
+  .auth-input.valid {
+    @apply border-green-500 focus:ring-green-500/50;
+  }
+
+  .auth-input.default {
+    @apply border-gray-700;
+  }
+
+  .auth-error {
+    @apply text-sm text-red-500 mt-1;
+  }
+
+  .auth-icon {
+    @apply absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 z-10
+    transition-colors pointer-events-none;
+  }
+
+  .auth-input-wrapper:focus-within .auth-icon {
+    @apply text-[#573cff];
+  }
+
+  .auth-input-action {
+    @apply absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 z-10
+    transition-colors cursor-pointer hover:text-gray-300;
+  }
+
+  .auth-validation-icon {
+    @apply absolute right-3 top-1/2 -translate-y-1/2 z-10;
+  }
+
+  .auth-message {
+    @apply text-sm text-red-500 mt-1;
+  }
+
+  .auth-anchor {
+    @apply text-[#573cff] hover:text-[#573cff]/80 transition-colors duration-200;
+  }
+}
